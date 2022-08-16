@@ -9,4 +9,10 @@ describe('<NotFound />', () => {
 
     expect(item).toBeInTheDocument();
   });
+
+  it('should match snapshot', () => {
+    const { container } = render(<NotFound search="bla bla bla" />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
